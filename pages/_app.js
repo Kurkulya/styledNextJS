@@ -5,6 +5,7 @@ import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import configureStore from 'redux/store';
+import GlobalStyles from 'styled_components/Global';
 
 export class ExampleApp extends App {
     static async getInitialProps(props) {
@@ -23,6 +24,7 @@ export class ExampleApp extends App {
         return (
             <Container>
                 <Provider store={store}>
+                    <GlobalStyles />
                     <Component {...pageProps} />
                 </Provider>
             </Container>
