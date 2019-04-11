@@ -5,6 +5,7 @@ import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import configureStore from 'redux/store';
+import withRoot from 'helpers/styles/withRoot';
 
 export class ExampleApp extends App {
     static async getInitialProps(props) {
@@ -30,4 +31,4 @@ export class ExampleApp extends App {
     }
 }
 
-export default withRedux(configureStore)(withReduxSaga(ExampleApp));
+export default withRoot(withRedux(configureStore)(withReduxSaga(ExampleApp)));
